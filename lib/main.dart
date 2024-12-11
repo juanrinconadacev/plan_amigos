@@ -12,7 +12,8 @@ class Aplicacion extends StatelessWidget {
     return MaterialApp(
       title: 'Hola Mundo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 183, 79, 58)),
+        colorScheme: ColorScheme.fromSeed(
+            seedColor: const Color.fromARGB(255, 183, 79, 58)),
         useMaterial3: true,
       ),
       home: const PantallaAmigos(title: "Mis amigos"),
