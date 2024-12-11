@@ -51,10 +51,12 @@ class _PantallaAmigosState extends State<PantallaAmigos> {
               )),
           TextButton(onPressed: nuevoAmigo, child: const Text("Añadir")),
           ListView.builder(
-              itemCount: amigos.length,
-              itemBuilder: (context, index) {
-                return ListTile(title: Text(amigos[index]));
-              })
+            itemCount: amigos.length,
+            itemBuilder: (context, index) {
+              return ListTile(title: Text(amigos[index]));
+            },
+            shrinkWrap: true,
+          )
         ],
       ),
     );
