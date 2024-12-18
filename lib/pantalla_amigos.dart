@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hola_mundo/pantalla_chiste.dart';
 
 class PantallaAmigos extends StatefulWidget {
   const PantallaAmigos({super.key, required this.title});
@@ -29,9 +30,14 @@ class _PantallaAmigosState extends State<PantallaAmigos> {
     if (_campoTextoAmigo.text.isNotEmpty) {
       amigos.add(_campoTextoAmigo.text);
       _campoTextoAmigo.text = "";
-      setState(() {});
+      setState(() {}); // Refrescar Interfaz
     }
     print(amigos);
+  }
+
+  void chiste() {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => const PantallaChiste()));
   }
 
   @override
@@ -49,7 +55,8 @@ class _PantallaAmigosState extends State<PantallaAmigos> {
                     border: OutlineInputBorder(),
                     labelText: "Nombre de tu amigo..."),
               )),
-          TextButton(onPressed: nuevoAmigo, child: const Text("Añadir")),
+          TextButton(onPressed: nuevoAmigo, child: const Text("Añadir amigo")),
+          TextButton(onPressed: chiste, child: const Text("Chiste")),
           ListView.builder(
             itemCount: amigos.length,
             itemBuilder: (context, index) {
